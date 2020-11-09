@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="return false">
+    <input type="text" id="textfield" >
+</form>
+
+<div class="key"></div>
+<div class="keycode"></div>
+<div class="code"></div>
+
+
+
+    <script>
+
+let textField = document.getElementById('textfield')
+
+textField.addEventListener('keydown', (event) => {
+     document.querySelector('.key').innerHTML = event.key
+     document.querySelector('.keycode').innerHTML = event.keyCode
+     document.querySelector('.code').innerHTML = event.code
+})
+
+
+
+
+    </script>
+</body>
+</html>
