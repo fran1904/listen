@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="docBody">
+
+    <h1>Color Picker</h1>
+    <p id="countOutput"></p>
+    <p id="demo">Choose a color</p>
+    <p>
+      <button onclick="changeBackground('pink')">Rosa</button>
+      <button onclick="changeBackground('purple')">Lila</button>
+      <button onclick="changeBackground('orange')">Orange</button>
+    </p>
+    <p>
+      <input type="range" id="red" value="255" min="0" max="255" style="background:red"> Rot<br>
+      <input type="range" id="green" value="255" min="0" max="255" style="background:green"> Grün<br>
+      <input type="range" id="blue" value="255" min="0" max="255" style="background:blue"> Blau
+    </p>
+
+    <script>
+// variables
+let count = 0
+let redValue = 0
+let greenValue = 0
+let blueValue = 0
+
+let rgbValue = `rgb(${redValue}, ${greenValue}, ${blueValue})`
+// selections
+let allInputTags = document.querySelectorAll('input')
+
+// functions
+
+allInputTags.forEach((item) => {
+        item.addEventListener('change', (event) => {
+                if (item.id == 'red') {
+                    redValue = item.value
+                    console.log(redValue)
+                } else if (item.id == 'green'){
+                    greenValue == item.value
+                    console.log(greenValue)
+                } else if (item.id == 'blue') {
+                    blueValue == item.value
+                }
+            } 
+        )
+    }
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+let changeBackground = (col) => {
+    document.getElementById('docBody').style.background = col
+    count++
+    document.getElementById('countOutput').innerHTML = `We changed the color ${count} times`
+}
+
+
+
+
+
+    </script>
+</body>
+</html>
